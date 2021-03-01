@@ -1,7 +1,7 @@
 # JS30 官網
 [連結](https://javascript30.com/)
 # JS30-Practice<br>
-[W1-Clock](https://ken7875.github.io/JS30-Practice/W01/index.html)<br>
+[W1-Drum](https://ken7875.github.io/JS30-Practice/W01/index.html)<br>
 [W2-Clock](https://ken7875.github.io/JS30-Practice/W02/clock.html)<br>
 [W3-CSS-Variable](https://ken7875.github.io/JS30-Practice/W03/index.html)<br>
 [W5-Flex Panel Gallery](https://ken7875.github.io/JS30-Practice/W05/index.html)<br>
