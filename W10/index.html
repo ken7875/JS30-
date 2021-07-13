@@ -96,27 +96,21 @@
         </div>
     </div>
     <script>
-        var checkboxs = document.querySelectorAll('.inbox input[type="checkbox"]');
-        let lastCheck; // 紀錄我們第一個選的 checkbox
-        function handleCheck(e) {
-            let isBetween = false
-            if(e.shiftKey && this.checked){
-                checkboxs.forEach((checkbox) => {
-                    console.log(checkbox)
-                    if(this === checkbox || checkbox === lastCheck){
-                        isBetween = !isBetween
-                    }
-                    if(isBetween){
-                        checkbox.checked = true
-                    }
-                })
+        let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        let checkBoxArray = Array.from(checkboxes)
+        function handleClick(e) {
+            let lastCheck = null
+            console.log(e);
+            // this.checked !== null 判斷是否有點擊過第一筆資料了
+            if(e.shiftKey && this.checked !== null) {
+                let nowCheck = checkBoxArray.indexOf(this)
+                checkBoxArray.slice(Math.min(nowCheck, lastCheck), Math.max(nowCheck, lastCheck))
+                .forEach(input => input.checked = true)
             }
-            lastCheck = this
-        };
+            lastCheck = checkBoxArray.indexOf(this)
+        }
 
-        checkboxs.forEach((checkbox) => {
-           checkbox.addEventListener('click', handleCheck)
-        })
+        checkBoxArray.forEach((checkbox) => checkbox.addEventListener('click', handleClick))
     </script>
 </body>
 
