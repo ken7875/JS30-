@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let secretCode = 'hithere'
+        let input = []
+        window.addEventListener('keyup', e =>{
+            input.push(e.key)
+            console.log(secretCode.length);
+            input.splice(-secretCode.length - 1, input.length - secretCode.length)
+            if(input.join('').includes(secretCode)){
+                console.log('perfect');
+            }
+        })
+        // function solution(str){
+        //     let arr = str.split('')
+        //     let collector = []
+        //     for(let i=0; i<arr.length; i=i+2) {
+        //         var pair = []
+        //         pair.push(arr[i], arr[i+1])
+        //         // console.log(pair);
+        //         if(pair[pair.length -1] === undefined) pair[pair.length -1] = '_'
+        //         console.log(pair);
+        //         collector.push(pair.join(''))
+        //         console.log(collector)
+        //     }
+        //     return collector
+        // }
+        // solution('abc')
+        function solution(num){
+            // convert the number to a roman numeral
+            var lookup = {M:1000,CM:900,D:500,CD:400,C:100,XC:90,L:50,XL:40,X:10,IX:9,V:5,IV:4,I:1},roman = '',i;
+            for ( i in lookup ) {
+                while ( num >= lookup[i] ) {
+                roman += i;
+                console.log(roman)
+                num -= lookup[i];
+                }
+            }
+            console.log(i);
+            return roman;
+        }
+        solution(1550)
+        console.log(solution(1350))
+    </script>
+</body>
+</html>
